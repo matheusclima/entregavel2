@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenação</title>
+    <script>
+        let n = prompt("Informe a quantidade de entradas:")
+        let array = new Array(n)
+        for(let i = 0; i < n; i++) {
+            array[i] = parseFloat(prompt(`Informe o número na posição ${i} do array`))
+        }
+
+        let quicksort = (array) => {
+            if(array.length <= 1) {
+                return array
+            }
+
+            let pivot = array[0]
+            let leftArray = [], rightArray = []
+            for(let i = 1; i < array.length; i++) {
+                if(array[i] < pivot) {
+                    leftArray.push(array[i])
+                } else {
+                    rightArray.push(array[i])
+                }
+            }
+
+            return [...quicksort(leftArray), pivot, ...quicksort(rightArray)]
+        }
+        let ordenedArray = quicksort(array)
+        document.write(ordenedArray)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

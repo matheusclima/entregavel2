@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let mdc = (a, b) => {
+            if(a % b == 0) {
+                return b
+            }
+            return mdc(b, a % b)
+        }
+        let a = prompt("Informe o primeiro número:")
+        let b = prompt("Informe o segundo número:")        
+        document.write(`O máximo divisor comum entre os dois números é ${mdc(a, b)}`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
